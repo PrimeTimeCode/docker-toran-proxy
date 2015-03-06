@@ -34,5 +34,11 @@ echo "" | tee -a /etc/ssh/sshd_config
 echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 echo "== Password Authentication is disabled for ssh"
 
+sed -i "s/.*github.com.*/        \"github.com\": \"$GITHUB_OAUTH\"/g" /var/www/toran/app/toran/composer/auth.json
+echo ">> Github Token has been saved"
+
+/sbin/setuser alpha crontab -l | { cat; echo "* * * * * cd /var/www/toran && php bin/cron >/dev/null 2>&1"; } | crontab -
+echo ">> Crontab added"
+
 echo ">> Your git path is /home/alpha/mirrors"
 echo ">> Your git URL is alpha@$TORAN_HOST:mirrors/ (Customize for your published port if not 22)"

@@ -10,6 +10,7 @@ ENV TORAN_HTTP_PORT 80
 ENV TORAN_HTTPS_PORT 443
 ENV TORAN_HOST **ChangeMe**
 ENV TORAN_BASE_URL **NULL**
+ENV GITHUB_OAUTH **ChangeMe**
 
 RUN apt-add-repository ppa:nginx/stable -y
 RUN export LANG=C.UTF-8; apt-add-repository ppa:ondrej/php5-5.6 -y
@@ -55,6 +56,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN rm -Rf /var/www/html
 RUN curl -O https://toranproxy.com/releases/toran-proxy-v1.1.6.tgz && tar zxvf toran-proxy-v1.1.6.tgz -C /var/www && rm toran-proxy-v1.1.6.tgz
 RUN cp /var/www/toran/app/config/parameters.yml.dist /var/www/toran/app/config/parameters.yml
+ADD toran/composer/auth.json /var/www/toran/app/toran/composer/auth.json
 RUN chown -R alpha:alpha /var/www/*
 
 RUN mkdir /home/alpha/mirrors && chown alpha:alpha /home/alpha/mirrors
