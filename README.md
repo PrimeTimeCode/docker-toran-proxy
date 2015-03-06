@@ -11,7 +11,7 @@
 
 ### Environment Variables
 Key  | Value | Default
-------------- | -------------
+------------- | ------------- | -------------
 SECRET  | Secret | **
 TORAN_SCHEME  | Protocol | http
 TORAN_HTTP_PORT  | HTTP Port | 80
