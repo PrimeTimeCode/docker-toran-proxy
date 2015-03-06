@@ -8,6 +8,7 @@
 - generates mirror urls for toran config
 - cron already set to run hourly
 - based on phusion-baseimage
+- installs github oauth token
 
 ### Environment Variables
 Key  | Value | Default
@@ -18,3 +19,4 @@ TORAN_HTTP_PORT  | HTTP Port | 80
 TORAN_HTTPS_PORT  | HTTPS Port | 443
 TORAN_HOST | Hostname | **
 TORAN_BASE_URL | Base URL | **
+GITHUB_OAUTH | Github OAuth | **
