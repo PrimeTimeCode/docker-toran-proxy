@@ -6,7 +6,7 @@
 - ssh for git proxy
 - automatically sets up location for mirrors
 - generates mirror urls for toran config
-- cron already set to run hourly
+- cron set to run every minute
 - based on phusion-baseimage
 - installs github oauth token
 
