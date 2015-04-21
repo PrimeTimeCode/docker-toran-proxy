@@ -11,6 +11,7 @@ ENV TORAN_HTTPS_PORT 443
 ENV TORAN_HOST **ChangeMe**
 ENV TORAN_BASE_URL **NULL**
 ENV GITHUB_OAUTH **ChangeMe**
+ENV PUB_KEY **NULL**
 
 RUN apt-add-repository ppa:nginx/stable -y
 RUN export LANG=C.UTF-8; apt-add-repository ppa:ondrej/php5-5.6 -y
